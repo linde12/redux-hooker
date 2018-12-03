@@ -1,6 +1,6 @@
 {
   "name": "redux-hooker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A dirty redux hook for React",
   "main": "index.js",
   "peerDependencies": {
