@@ -123,7 +123,7 @@ const Counter = () => {
 }
 ```
 
-### <Provider />
+### Provider
 
 `<Provider />` is very similar to the Provider component of react-redux for those of you who have used it. It is a simple context provider, which takes a `value` prop pointing to the store instance. It should be used a the top level of your react tree so that all other components can use the hooks provided by redux-hooker. 
 
