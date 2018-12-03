@@ -71,6 +71,8 @@ export const useDispatch = () => {
 }
 
 export const useActions = actions => {
+  if (!actions) return null
+
   const dispatch = useDispatch()
   const boundActions = useMemo(() => bindActionCreators(actions, dispatch), [
     actions,
@@ -78,7 +80,7 @@ export const useActions = actions => {
   return boundActions
 }
 
-export const useStore = (mapState, actions = []) => {
+export const useStore = (mapState, actions) => {
   const state = useStoreState(mapState)
   return [state, useActions(actions), useDispatch()]
 }
