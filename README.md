@@ -1,4 +1,5 @@
-# redux-hooker
+
+<p align="center"><h1>redux-hooker<img align="right" src="https://a.uguu.se/CLu2XGpJN1Mb_NewProject%282%29.png"></h1></p>
 
 redux-hooker is a library providing simple & easy-to-use redux hooks for React.
 
@@ -133,9 +134,9 @@ import { Provider } from 'redux-hooker'
 
 const store = createStore(combineReducers({ .... }))
 
-const App = () => ({
+const App = () => (
     <Provider value={store}>
         <Main />
     </Provider>
-})
+)
 ```
