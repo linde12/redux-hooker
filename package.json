@@ -1,0 +1,32 @@
+{
+  "name": "redux-hooker",
+  "version": "1.0.0",
+  "description": "A dirty redux hook for React",
+  "main": "index.js",
+  "peerDependencies": {
+    "react": "^16.7.0-alpha.2",
+    "redux": "^4.0.1"
+  },
+  "devDependencies": {
+    "react": "^16.7.0-alpha.2",
+    "redux": "^4.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linde12/redux-hooker.git"
+  },
+  "keywords": [
+    "redux",
+    "hooks",
+    "react"
+  ],
+  "author": "linde12",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/linde12/redux-hooker/issues"
+  },
+  "homepage": "https://github.com/linde12/redux-hooker#readme"
+}
