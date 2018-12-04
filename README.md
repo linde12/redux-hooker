@@ -81,7 +81,7 @@ Example:
 ```js
 import * as counterActions from './actions/counter'
 // OR
-const counterActions = { incremnet: () => ({ type: 'INCREMENT' }), decrement: () => ({ type: 'DECREMENT' }) }
+const counterActions = { increment: () => ({ type: 'INCREMENT' }), decrement: () => ({ type: 'DECREMENT' }) }
 const CounterActions = () => {
     const actions = useActions(counterActions) // counterActions will reference the same object every render
     return (
