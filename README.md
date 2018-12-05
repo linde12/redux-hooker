@@ -1,5 +1,5 @@
 
-<p align="center"><h1>redux-hooker<img align="right" src="https://raw.githubusercontent.com/linde12/redux-hooker/master/.github/rh.png" /></h1></p>
+<p align="center"><h1>redux-hooker<img align="right" src="https://raw.githubusercontent.com/linde12/redux-hooker/master/.github/rh.png" width="160" /></h1></p>
 
 redux-hooker is a library providing simple & easy-to-use redux hooks for React.
 
