@@ -1,6 +1,16 @@
 import { createContext, useState, useEffect, useContext, useMemo } from 'react'
 import { bindActionCreators } from 'redux'
 
+const is = 'is' in Object ? Object.is : (a, b) => {
+  if (a === b) {
+    // strictly equal, but not functionally: -0 is not funcitonally equal to +0
+    // See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#Same-value_equality
+    return a !== 0 || b !== 0 || 1 / a === 1 / b
+  }
+  // if values not equal to themselves, assume NaN
+  return a !== a && b !== b
+}
+
 /**
  * Get a property within the passed object bu the passed `path` (dot separated)
  */
@@ -18,20 +28,26 @@ const getMapper = mapState => {
 }
 
 /**
- * Determine wether `a` and `b` are equal, or in the case of both being objects
+ * Determine whether `a` and `b` are equal, or in the case of both being objects
  * shallowly compare them.
  */
 const shallowEq = (a, b) => {
-  if (typeof a !== 'object' || typeof b !== 'object') {
-    return a === b
-  }
-  const aValues = Object.values(a)
-  const bValues = Object.values(b)
-  if (aValues.length !== bValues.length) return false
+  if (is(a,b)) return true
 
-  return Object.entries(a).every(([key, value]) => {
-    return b[key] === value
-  })
+  if (typeof a !== 'object' || a === null || typeof b !== 'object' || b === null) {
+    return false
+  }
+
+  const aKeys = Object.keys(a)
+  const bKeys = Object.keys(b)
+  if (aKeys.length !== bKeys.length) return false
+
+  for (let i = 0; i < keysA.length; i++) {
+    if (!b.hasOwnProperty(aKeys[i]) || !is(a[aKeys[i]], b[bKeys[i]])) {
+      return false
+    }
+  }
+    return true
 }
 
 const StoreContext = createContext(null)
