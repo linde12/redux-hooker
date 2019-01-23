@@ -42,7 +42,7 @@ const shallowEq = (a, b) => {
   const bKeys = Object.keys(b)
   if (aKeys.length !== bKeys.length) return false
 
-  for (let i = 0; i < keysA.length; i++) {
+  for (let i = 0; i < aKeys.length; i++) {
     if (!b.hasOwnProperty(aKeys[i]) || !is(a[aKeys[i]], b[bKeys[i]])) {
       return false
     }
